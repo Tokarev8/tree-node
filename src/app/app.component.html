@@ -1,0 +1,10 @@
+@if (treeService.tree1()) {
+  <tree-node [treeNode]="treeService.tree1()!" />
+}
+
+@if (treeService.tree2()) {
+  <tree-node
+    [treeNode]="treeService.tree2()!"
+    [isInitiallyExpanded]="true"
+  />
+}

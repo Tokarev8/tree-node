@@ -1,0 +1,14 @@
+<div class="tree-card" [class.deleted]="isDeleted()">
+  @if (!isExpanded()) {
+    <h3>{{ treeNode().title }}</h3>
+    <p>ID: {{ treeNode().id }}</p>
+    <button (click)="buttonAction.emit()">Click me</button>
+  } @else {
+    <h3>{{ treeNode().title }}</h3>
+    <p>Children: {{ childrenCount() }}</p>
+    <button (click)="buttonAction.emit()">
+      {{ "Show all child" }}
+    </button>
+  }
+</div>
+
