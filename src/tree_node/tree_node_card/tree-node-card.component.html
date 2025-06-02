@@ -1,4 +1,5 @@
-<div class="tree-card" [class.deleted]="isDeleted()">
+<div class="tree-card"
+     [class.deleted]="isDeleted()">
   @if (!isExpanded()) {
     <h3>{{ treeNode().title }}</h3>
     <p>ID: {{ treeNode().id }}</p>

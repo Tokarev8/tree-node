@@ -1,18 +1,21 @@
 
 <div class="tree-nodes">
-  <tree-node-card
-    [treeNode]="treeNode()"
-    [isExpanded]="isInitiallyExpanded()"
+  <div class="tree-nodes__card">
+    @if (treeNode().children.length){
+      <button class="tree-nodes__toggle-button"
+              (click)="toggleCurrentNode()">
+        {{ (_isExpanded() || _isExpandedAll()) ? '▲' : '▼' }}
+      </button>
+    }
+    <tree-node-card
+      [treeNode]="treeNode()"
+      [isExpanded]="isInitiallyExpanded()"
 
-    (buttonAction)="buttonAction()"
-    [childrenCount]="childrenCount()"
-  >
-  </tree-node-card>
-  @if (treeNode().children.length){
-    <button (click)="toggleCurrentNode()">
-      {{ _isExpanded() ? '▲' : '▼' }}
-    </button>
-  }
+      (buttonAction)="buttonAction()"
+      [childrenCount]="childrenCount()"
+    >
+    </tree-node-card>
+  </div>
 
   @if (treeNode().children && (_isExpandedAll() || _isExpanded() )) {
     @for (child of treeNode().children; track child.id) {

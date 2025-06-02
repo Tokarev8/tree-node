@@ -4,9 +4,16 @@
   margin-left: 40px;
   margin-top: 40px;
 
+
   &__child {
     margin-left: 80px;
   }
+
+  &__card{
+    display: flex;
+  }
+  &__toggle-button{
+    margin-left: 10px;
+    width: 50px;
+  }
 }
-
-
